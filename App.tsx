@@ -1,13 +1,16 @@
-import { ScreenContent } from 'components/ScreenContent';
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { View } from 'react-native';
+import SplashScreen from './screens/SplashScreen';
+import OnboardingScreen from './screens/OnboardingScreen';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 import './global.css';
 
 export default function App() {
   return (
-    <>
-      <ScreenContent title="Home" path="App.tsx"></ScreenContent>
-      <StatusBar style="auto" />
-    </>
+    <SafeAreaView >
+      <OnboardingScreen />
+    </SafeAreaView>
   );
 }
