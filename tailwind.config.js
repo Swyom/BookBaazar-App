@@ -4,7 +4,13 @@ module.exports = {
 
   presets: [require('nativewind/preset')],
   theme: {
-    extend: {},
+    extend: {
+      // fontFamily: {
+      //   agbalumo: ['Agbalumo_400Regular'],
+      //   abhaya: ['AbhayaLibre_400Regular'],
+      //   abhayaBold: ['AbhayaLibre_700Bold'],
+      // },
+    },
   },
   plugins: [],
 };
