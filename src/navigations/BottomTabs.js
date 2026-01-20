@@ -1,5 +1,6 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Ionicons from '@expo/vector-icons/Ionicons'
 
 import HomeScreen from '../Screens/HomeScreen'
@@ -8,8 +9,19 @@ import AudioBooks from '../Screens/AudioBooks'
 import SaleBook from '../Screens/SaleBook'
 import ProfileScreen from '../Screens/ProfileScreen'
 import FavoriteBooks from '../Screens/FavoriteBooks'
+import ReadingScreen from '../Screens/ReadingScreen'
 
 const Tab = createBottomTabNavigator()
+const HomeStack = createNativeStackNavigator()
+
+const HomeStackNavigator = () => {
+  return (
+    <HomeStack.Navigator screenOptions={{ headerShown: false }}>
+      <HomeStack.Screen name="HomeMain" component={HomeScreen} />
+      <HomeStack.Screen name="ReadingScreen" component={ReadingScreen} />
+    </HomeStack.Navigator>
+  )
+}
 
 const BottomTabs = () => {
   return (
@@ -31,7 +43,7 @@ const BottomTabs = () => {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeStackNavigator} />
       <Tab.Screen name="Favorite" component={FavoriteBooks} />
       <Tab.Screen name="SaleBook" component={SaleBook} />
       <Tab.Screen name="AudioBooks" component={AudioBooks} />
